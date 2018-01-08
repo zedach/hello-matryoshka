@@ -53,10 +53,8 @@ object Main extends App {
 			and we abstract someExpr over the fixed point type (only requiring that it has an instance of Corecursive),
 			so we can postpone the choice of the fixed point as long as possible.”
 		 */
-		val emptyExpr = EOS[T]().embed
-		val worldExp = Word[T]("World", emptyExpr).embed
-		val helloWorldExpr = Word[T]("Hello", worldExp).embed
-		helloWorldExpr
+
+		Word[T]("Hello", Word[T]("world!", EOS[T]().embed).embed).embed
 	}
 
 
