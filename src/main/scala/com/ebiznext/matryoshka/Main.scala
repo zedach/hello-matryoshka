@@ -7,8 +7,8 @@ import matryoshka.implicits._
 import scalaz._
 
 /**
-	* Created by Mourad on 08/01/2018.
-	*/
+*   Created by Mourad on 08/01/2018.
+*/
 
 /*
 	sealed trait Expr
@@ -19,12 +19,13 @@ import scalaz._
 
 // 1. we rewrite our recursive data structures in Higher Kinded Type
 // ==> separate recursion from operations
+
 sealed trait Expr[A]
 
 final case class Word[A](value: String, e: A) extends Expr[A]
-
 final case class EOS[A]() extends Expr[A] // END OF STRING
 
+// --- 
 
 object Main extends App {
 
