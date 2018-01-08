@@ -12,7 +12,7 @@ import scalaz._
 
 /*
 	sealed trait Expr
-	final case class Word(value: String, e: A) extends Expr
+	final case class Word(value: String, e: Expr) extends Expr
 	final case class EOS() extends Expr // END OF STRING
 */
 
@@ -25,7 +25,7 @@ sealed trait Expr[A]
 final case class Word[A](value: String, e: A) extends Expr[A]
 final case class EOS[A]() extends Expr[A] // END OF STRING
 
-// --- 
+// ---
 
 object Main extends App {
 
